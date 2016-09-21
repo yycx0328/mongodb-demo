@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <style type="text/css">
+    table {
+        border: 1px solid green;
+    }
+    
+    table thead tr th {
+        border: 1px solid green;
+    }
+    
+    table tbody tr td {
+        border: 1px solid green;
+    }
+    </style>
+</head>
+
+<body>
+    <h1>
+        修改
+    </h1> 
+    <form method="post">
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                       uid : 
+                    </td>
+                    <td>
+                        <input style="width:150px;" type="text" name="uid" value="<%=user.uid%>"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                       title : 
+                    </td>
+                    <td>
+                        <input style="width:150px;" type="text" name="title" value="<%=user.title%>"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                       content : 
+                    </td>
+                    <td>
+                        <textarea style="width:150px;" name="content"><%=user.content%></textarea>
+                        <input type="hidden" name="id" value="<%=user._id%>"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                       
+                    </td>
+                    <td style="text-align:right;">
+                         <input type="submit" value="submit"/>
+                        <input type="reset" value="reset"/>
+                    </td>
+                </tr>
+            </tbody>
+        </table>    
+    </form>
+</body>
+
+</html>

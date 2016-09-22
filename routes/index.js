@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
-var userModel = require('../models/user').user;
-mongoose.connect('mongodb://localhost/mongodbaduq');
+var userModel = require('../models/users').user;
+mongoose.connect('mongodb://localhost/isofteam');
 
 router.get('/', function(req, res, next) {
     var deviceAgent = req.headers['user-agent'].toLowerCase();
@@ -29,6 +29,8 @@ router.get('/pc/about-me', function(req, res, next) {
 router.get('/pc/about-view', function(req, res, next) {
     res.render('pc/about-view.html');
 });
+
+
 
 router.get('/add', function(req, res, next) {
     res.render('add.html', { title: 'add' });

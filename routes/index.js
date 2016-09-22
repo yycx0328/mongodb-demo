@@ -26,8 +26,8 @@ router.get('/pc/about-me', function(req, res, next) {
     res.render('pc/about-me.html');
 });
 
-router.get('/pc/about-all', function(req, res, next) {
-    res.render('pc/about-all.html');
+router.get('/pc/about-view', function(req, res, next) {
+    res.render('pc/about-view.html');
 });
 
 router.get('/add', function(req, res, next) {

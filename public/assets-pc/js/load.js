@@ -32,7 +32,7 @@ function nav_left()
 	leftHtml += "		<li>";
 	leftHtml += "			<a href='#'><i class='fa fa-fw fa-file'></i>开发心得<span class='fa arrow'></span></a>";
 	leftHtml += "			<ul class='nav nav-second-level'>";
-	leftHtml += "				<li><a href='about-all'>总览</a></li>";
+	leftHtml += "				<li><a href='about-view'>总览</a></li>";
 	leftHtml += "				<li><a href='about-me'>简说自己</a></li>";
 	leftHtml += "				<li><a href='start-linux'>Linux开始</a></li>";
 	leftHtml += "				<li><a href='start-github'>从Github开始</a></li>";

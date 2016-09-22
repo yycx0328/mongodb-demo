@@ -1,64 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <title>
-        <%= title %>
-    </title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <style type="text/css">
-    table {
-        border: 1px solid green;
-    }
-    
-    table thead tr th {
-        border: 1px solid green;
-    }
-    
-    table tbody tr td {
-        border: 1px solid green;
-    }
-    </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>首页</title>
+    <script src="/javascripts/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        redirect();
+    });
+
+    function redirect() {
+        var sUserAgent = navigator.userAgent.toLowerCase();
+        var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+        var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+        var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+        var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+        var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+        var bIsAndroid = sUserAgent.match(/android/i) == "android";
+        var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+        var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+
+        if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+            window.location.href = 'phone/index.html';
+        } else {
+            window.location = 'pc/index.html';
+        }
+    } 
+    </script>
 </head>
 
 <body>
-    <p>
-        <a href="add">增加</a>
-    </p> 
-    <table>
-        <thead>
-            <tr>
-                <th>id</th>
-                <th>uid</th>
-                <th>title</th>
-                <th>content</th>
-                <th>createTime</th>
-                <th>操作</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% users.forEach(function( user ){ %>
-                <tr>
-                    <td>
-                        <%=user._id%>
-                    </td>
-                    <td>
-                        <%= user.uid %>
-                    </td>
-                    <td>
-                        <%= user.title %>
-                    </td>
-                    <td>
-                        <%= user.content %>
-                    </td>
-                    <td>
-                        <%=user.createTime%>
-                    </td>
-                    <td><a href="delById?id=<%=user._id%>">删除</a> | <a href="modify?id=<%=user._id%>">修改</a></td>
-                </tr>
-                <% }); %>
-        </tbody>
-    </table>
 </body>
 
 </html>

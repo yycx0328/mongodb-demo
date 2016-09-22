@@ -1,0 +1,26 @@
+#frame-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 100%; 
+}
+
+#frame-left {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    height: 100%;
+    width: 260px;
+    overflow: hidden;
+    vertical-align: top; 
+}
+
+#frame-content {
+    position: fixed;
+    left: 260px;
+    top: 60px;
+    right: 0;
+    bottom: 0;
+    overflow: auto;      
+}
